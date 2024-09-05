@@ -1,6 +1,6 @@
 import { styled } from 'styled-components'
 import { cores } from '../../styles'
-import { ButtonContainer, ButtonLink } from '../Button/styles'
+import { ButtonLink } from '../Button/styles'
 
 export const Card = styled.div`
   background-color: ${cores.rosaEscuro};
