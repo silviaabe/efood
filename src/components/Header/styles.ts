@@ -13,6 +13,14 @@ export const Imagem = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    .restaurante {
+      width: 200px;
+    }
+
+    .carrinho {
+      width: 200px;
+    }
   }
 
   a {

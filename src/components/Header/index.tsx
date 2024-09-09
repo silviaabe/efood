@@ -7,7 +7,7 @@ import logo from '../../assets/images/logo.svg'
 const Header = () => (
   <Imagem style={{ backgroundImage: `url(${bannerImg})` }}>
     <div className="container">
-      <div>
+      <div className="restaurante">
         <Link to="/">Restaurantes</Link>
       </div>
       <div>
@@ -15,7 +15,7 @@ const Header = () => (
           <img src={logo} alt="EFOOD" />
         </Link>
       </div>
-      <div>
+      <div className="carrinho">
         <LinkCart href="#">0 produto(s) no carrinho</LinkCart>
       </div>
     </div>

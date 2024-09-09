@@ -7,10 +7,18 @@ export const Card = styled.div`
   padding: 8px;
   margin-bottom: 32px;
 
+  &:hover {
+    opacity: 0.7;
+    transition: opacity 0.5s ease;
+    cursor: pointer;
+  }
+
   ${ButtonLink} {
+    display: block;
     background-color: ${cores.rosaClaro};
     color: ${cores.rosaEscuro};
     width: 100%;
+    text-align: center;
   }
 `
 
