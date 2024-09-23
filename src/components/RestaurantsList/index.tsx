@@ -33,6 +33,7 @@ const RestaurantsList = ({ restaurants }: Props) => {
               avaliacao={restaurant.avaliacao}
               descricao={restaurant.descricao}
               capa={restaurant.capa}
+              restaurant={restaurant}
             />
           </li>
         ))}

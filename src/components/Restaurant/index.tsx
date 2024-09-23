@@ -10,6 +10,7 @@ import {
 import Tag from '../Tag'
 import estrela from '../../assets/images/estrela.svg'
 import Button from '../Button'
+import { Restaurant } from '../../pages/Home'
 
 type Props = {
   id: number
@@ -18,6 +19,7 @@ type Props = {
   avaliacao: string
   descricao: string
   capa: string
+  restaurant: Restaurant
 }
 
 const Product = ({ id, titulo, infos, avaliacao, descricao, capa }: Props) => {
@@ -32,8 +34,14 @@ const Product = ({ id, titulo, infos, avaliacao, descricao, capa }: Props) => {
     <Card to={`/restaurantes/${id}`}>
       <img src={capa} alt={titulo} />
       <Informacoes>
-        {infos.map((info) => (
-          <Tag key={info}>{info}</Tag>
+        {infos.map((info, index) => (
+          <Tag key={index}>
+            {typeof info === 'boolean'
+              ? info
+                ? 'Destaque da semana'
+                : ''
+              : info}
+          </Tag>
         ))}
       </Informacoes>
       <Infos>
