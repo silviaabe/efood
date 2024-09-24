@@ -1,6 +1,6 @@
 import { styled } from 'styled-components'
-import { cores } from '../../styles'
-import { ButtonLink } from '../Button/styles'
+import { breakpoints, cores } from '../../styles'
+import { ButtonContainer, ButtonLink } from '../Button/styles'
 
 export const Card = styled.div`
   background-color: ${cores.rosaEscuro};
@@ -8,8 +8,10 @@ export const Card = styled.div`
   margin-bottom: 32px;
 
   img {
-    width: 304px;
-    height: 167px;
+    display: block;
+    width: 100%;
+    height: 217px;
+    object-fit: cover;
   }
 
   &:hover {
@@ -32,6 +34,14 @@ export const List = styled.ul`
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 32px;
   margin: 56px 0 120px;
+
+  @media (max-width: ${breakpoints.desktop}) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    grid-template-columns: 1fr;
+  }
 `
 
 export const Titulo = styled.h3`
@@ -79,6 +89,15 @@ export const ModalContent = styled.div`
   z-index: 1;
   display: flex;
 
+  @media (max-width: ${breakpoints.tablet}) {
+    display: block;
+    width: 100%;
+
+    img {
+      margin-bottom: 24px;
+    }
+  }
+
   header {
     position: absolute;
     top: 0;
@@ -89,6 +108,7 @@ export const ModalContent = styled.div`
       width: 16px;
       height: 16px;
       margin: 0;
+      cursor: pointer;
     }
   }
 
@@ -112,9 +132,11 @@ export const ModalContent = styled.div`
     margin: 16px 0;
   }
 
-  ${ButtonLink} {
+  ${ButtonContainer} {
     background-color: ${cores.rosaClaro};
     color: ${cores.rosaEscuro};
     width: 100%;
+    border: none;
+    cursor: pointer;
   }
 `

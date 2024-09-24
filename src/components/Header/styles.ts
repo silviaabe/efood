@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 
 export const Imagem = styled.div`
   width: 100%;
@@ -7,6 +7,10 @@ export const Imagem = styled.div`
   display: block;
   background-repeat: no-repeat;
   background-size: cover;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    display: none;
+  }
 
   .container {
     padding: 80px 0 120px;
@@ -31,8 +35,9 @@ export const Imagem = styled.div`
   }
 `
 
-export const LinkCart = styled.a`
+export const CartButton = styled.a`
   display: flex;
+  cursor: pointer;
 
   img {
     margin-left: 16px;

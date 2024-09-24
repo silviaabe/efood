@@ -2,7 +2,7 @@ import { ButtonContainer, ButtonLink } from './styles'
 
 export type Props = {
   type: 'button' | 'link'
-  title: string
+  title?: string
   to?: string
   onClick?: () => void
   children: string

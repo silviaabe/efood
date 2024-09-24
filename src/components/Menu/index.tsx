@@ -5,6 +5,8 @@ import { Menu } from '../../pages/Home'
 import Button from '../Button'
 
 import fechar from '../../assets/images/fechar.png'
+import { useDispatch } from 'react-redux'
+import { add, open } from '../../store/reducers/cart'
 
 const mock: Menu[] = [
   {
@@ -80,7 +82,21 @@ interface ModalState extends Menu {
   isVisible: boolean
 }
 
+export const formataPreco = (preco = 0) => {
+  return new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL'
+  }).format(preco)
+}
+
 const MenuCardapio = ({ menus = [] }: Props) => {
+  const dispatch = useDispatch()
+
+  const addToCart = (menu: Menu) => {
+    dispatch(add(menu))
+    dispatch(open())
+  }
+
   const [modal, setModal] = useState<ModalState>({
     isVisible: false,
     id: 0,
@@ -103,13 +119,6 @@ const MenuCardapio = ({ menus = [] }: Props) => {
       return descricao.slice(0, 200) + '...'
     }
     return descricao
-  }
-
-  const formataPreco = (preco = 0) => {
-    return new Intl.NumberFormat('pt-BR', {
-      style: 'currency',
-      currency: 'BRL'
-    }).format(preco)
   }
 
   return (
@@ -137,8 +146,10 @@ const MenuCardapio = ({ menus = [] }: Props) => {
                 <Descricao>{getDescricao(cardapio.descricao)}</Descricao>
                 <Button
                   type="link"
-                  to="/carrinho"
-                  title="Clique aqui para ir ao carrinho"
+                  title="Clique aqui para adicionar ao carrinho"
+                  onClick={() => {
+                    addToCart(cardapio)
+                  }}
                 >
                   Adicionar ao carrinho
                 </Button>
@@ -150,7 +161,7 @@ const MenuCardapio = ({ menus = [] }: Props) => {
         )}
       </List>
       <Modal className={modal.isVisible ? 'visivel' : ''}>
-        <ModalContent className="container">
+        <ModalContent>
           <header>
             <img
               src={fechar}
@@ -169,9 +180,9 @@ const MenuCardapio = ({ menus = [] }: Props) => {
             <p>Porção: {modal.porcao}</p>
             <Button
               aria-label="Adicionar ao carrinho"
-              type="link"
-              to="/carrinho"
-              title="Clique aqui para ir ao carrinho"
+              type="button"
+              title="Clique aqui para adicionar ao carrinho"
+              onClick={() => addToCart(modal)}
             >
               {`Adicionar ao carrinho - ${formataPreco(modal.preco)}`}
             </Button>

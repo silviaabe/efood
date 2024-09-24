@@ -6,7 +6,7 @@ import logo from '../../assets/images/logo.svg'
 
 const Banner = () => (
   <Imagem style={{ backgroundImage: `url(${bannerImg})` }}>
-    <Cabecalho>
+    <Cabecalho className="container">
       <Link to="/">
         <Logo src={logo} alt="EFOOD" />
       </Link>
