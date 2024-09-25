@@ -117,6 +117,10 @@ export const ModalContent = styled.div`
     height: 280px;
     object-fit: cover;
     margin-right: 24px;
+
+    @media (max-width: ${breakpoints.tablet}) {
+      width: 100%;
+    }
   }
 
   h3 {

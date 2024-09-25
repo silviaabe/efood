@@ -6,6 +6,8 @@ import { RootReducer } from '../../store'
 import { close, remove } from '../../store/reducers/cart'
 import { formataPreco } from '../Menu'
 
+import fechar from '../../assets/images/fechar.png'
+
 const Cart = () => {
   const { isOpen, items } = useSelector((state: RootReducer) => state.cart)
 
@@ -29,6 +31,9 @@ const Cart = () => {
     <CartContainer className={isOpen ? 'is-open' : ''}>
       <Overlay onClick={closeCart} />
       <Sidebar>
+        <header>
+          <img src={fechar} alt="Ícone de fechar" onClick={closeCart} />
+        </header>
         <ul>
           {items.map((item) => (
             <CartItem key={item.id}>

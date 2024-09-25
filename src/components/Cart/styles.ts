@@ -36,6 +36,20 @@ export const Sidebar = styled.aside`
   max-width: 360px;
   width: 100%;
 
+  header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 8px;
+
+    img {
+      width: 16px;
+      height: 16px;
+      margin: 0;
+      cursor: pointer;
+    }
+  }
+
   ${ButtonContainer} {
     max-width: 100%;
     width: 100%;
