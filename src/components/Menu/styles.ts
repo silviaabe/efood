@@ -1,9 +1,9 @@
 import { styled } from 'styled-components'
-import { breakpoints, cores } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 import { ButtonContainer, ButtonLink } from '../Button/styles'
 
 export const Card = styled.div`
-  background-color: ${cores.rosaEscuro};
+  background-color: ${colors.darkPink};
   padding: 8px;
   margin-bottom: 32px;
 
@@ -22,8 +22,8 @@ export const Card = styled.div`
 
   ${ButtonLink} {
     display: block;
-    background-color: ${cores.rosaClaro};
-    color: ${cores.rosaEscuro};
+    background-color: ${colors.lightPink};
+    color: ${colors.darkPink};
     width: 100%;
     text-align: center;
   }
@@ -44,17 +44,17 @@ export const List = styled.ul`
   }
 `
 
-export const Titulo = styled.h3`
+export const Title = styled.h3`
   font-size: 16px;
-  color: ${cores.rosaClaro};
+  color: ${colors.lightPink};
   margin: 8px 0;
 `
 
-export const Descricao = styled.p`
+export const Description = styled.p`
   font-size: 14px;
   line-height: 22px;
   margin-bottom: 8px;
-  color: ${cores.rosaClaro};
+  color: ${colors.lightPink};
 `
 
 export const Modal = styled.div`
@@ -67,7 +67,7 @@ export const Modal = styled.div`
   align-items: center;
   justify-content: center;
 
-  &.visivel {
+  &.is-visible {
     display: flex;
   }
 
@@ -83,7 +83,7 @@ export const Modal = styled.div`
 
 export const ModalContent = styled.div`
   max-width: 1024px;
-  background-color: ${cores.rosaEscuro};
+  background-color: ${colors.darkPink};
   padding: 32px;
   position: relative;
   z-index: 1;
@@ -124,21 +124,21 @@ export const ModalContent = styled.div`
   }
 
   h3 {
-    color: ${cores.branco};
+    color: ${colors.white};
     font-size: 18px;
     font-weight: bold;
   }
 
   p {
-    color: ${cores.branco};
+    color: ${colors.white};
     font-size: 14px;
     line-height: 22px;
     margin: 16px 0;
   }
 
   ${ButtonContainer} {
-    background-color: ${cores.rosaClaro};
-    color: ${cores.rosaEscuro};
+    background-color: ${colors.lightPink};
+    color: ${colors.darkPink};
     width: 100%;
     border: none;
     cursor: pointer;

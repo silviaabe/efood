@@ -1,13 +1,11 @@
-import { Restaurant } from '../../pages/Home'
-
-import { Imagem } from './styles'
+import { Image } from './styles'
 
 type Props = {
   restaurant: Restaurant
 }
 
 const BannerRestaurant = ({ restaurant }: Props) => (
-  <Imagem
+  <Image
     style={{
       backgroundImage: `url(${restaurant.capa || 'fallback-image-url.jpg'})`
     }}
@@ -16,7 +14,7 @@ const BannerRestaurant = ({ restaurant }: Props) => (
       <h3>{restaurant.tipo}</h3>
       <h2>{restaurant.titulo}</h2>
     </div>
-  </Imagem>
+  </Image>
 )
 
 export default BannerRestaurant

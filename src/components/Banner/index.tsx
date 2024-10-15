@@ -1,21 +1,22 @@
 import { Link } from 'react-router-dom'
-import { Cabecalho, Imagem, Logo, Titulo } from './styles'
 
 import bannerImg from '../../assets/images/fundo.svg'
 import logo from '../../assets/images/logo.svg'
 
+import * as S from './styles'
+
 const Banner = () => (
-  <Imagem style={{ backgroundImage: `url(${bannerImg})` }}>
-    <Cabecalho className="container">
-      <Link to="/">
-        <Logo src={logo} alt="EFOOD" />
+  <S.Image style={{ backgroundImage: `url(${bannerImg})` }}>
+    <S.Header className="container">
+      <Link title="Clique aqui para ir para a página inicial" to="/">
+        <S.Logo src={logo} alt="EFOOD" />
       </Link>
-      <Titulo>
+      <S.Title>
         Viva experiências gastronômicas <br />
         no conforto da sua casa
-      </Titulo>
-    </Cabecalho>
-  </Imagem>
+      </S.Title>
+    </S.Header>
+  </S.Image>
 )
 
 export default Banner

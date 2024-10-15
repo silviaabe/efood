@@ -1,7 +1,7 @@
 import { styled } from 'styled-components'
-import { breakpoints, cores } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 
-export const Imagem = styled.div`
+export const Image = styled.div`
   width: 100%;
   height: 280px;
   display: block;
@@ -9,7 +9,7 @@ export const Imagem = styled.div`
   background-position: center;
   background-size: 100%;
   font-size: 32px;
-  color: ${cores.branco};
+  color: ${colors.white};
 
   @media (max-width: ${breakpoints.tablet}) {
     font-size: 24px;

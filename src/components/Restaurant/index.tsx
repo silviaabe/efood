@@ -1,16 +1,9 @@
-import {
-  Card,
-  Conjunto,
-  Descricao,
-  Estrela,
-  Informacoes,
-  Infos,
-  Tit_Conj
-} from './styles'
 import Tag from '../Tag'
-import estrela from '../../assets/images/estrela.svg'
 import Button from '../Button'
-import { Restaurant } from '../../pages/Home'
+
+import star from '../../assets/images/estrela.svg'
+
+import * as S from './styles'
 
 type Props = {
   id: number
@@ -23,17 +16,20 @@ type Props = {
 }
 
 const Product = ({ id, titulo, infos, avaliacao, descricao, capa }: Props) => {
-  const getDescricao = (descricao: string) => {
-    if (descricao.length > 248) {
-      return descricao.slice(0, 245) + '...'
+  const getDescription = (text = '') => {
+    if (text.length > 248) {
+      return text.slice(0, 245) + '...'
     }
-    return descricao
+    return text
   }
 
   return (
-    <Card to={`/restaurantes/${id}`}>
+    <S.Card
+      title={`Clique aqui para ver mais detalhes do restaurante: ${titulo}`}
+      to={`/restaurantes/${id}`}
+    >
       <img src={capa} alt={titulo} />
-      <Informacoes>
+      <S.Informations>
         {infos.map((info, index) => (
           <Tag key={index}>
             {typeof info === 'boolean'
@@ -43,16 +39,16 @@ const Product = ({ id, titulo, infos, avaliacao, descricao, capa }: Props) => {
               : info}
           </Tag>
         ))}
-      </Informacoes>
-      <Infos>
-        <Tit_Conj>
+      </S.Informations>
+      <S.Infos>
+        <S.SetTitles>
           <h3>{titulo}</h3>
-          <Conjunto>
+          <S.Set>
             <h3>{avaliacao}</h3>
-            <Estrela src={estrela} />
-          </Conjunto>
-        </Tit_Conj>
-        <Descricao>{getDescricao(descricao)}</Descricao>
+            <S.Star src={star} />
+          </S.Set>
+        </S.SetTitles>
+        <S.Description>{getDescription(descricao)}</S.Description>
         <Button
           type="link"
           to={`/restaurantes/${id}`}
@@ -60,8 +56,8 @@ const Product = ({ id, titulo, infos, avaliacao, descricao, capa }: Props) => {
         >
           Saiba mais
         </Button>
-      </Infos>
-    </Card>
+      </S.Infos>
+    </S.Card>
   )
 }
 

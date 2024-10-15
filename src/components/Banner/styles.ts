@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { breakpoints } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 
-export const Imagem = styled.div`
+export const Image = styled.div`
   width: 100%;
   height: 384px;
   display: block;
@@ -13,10 +13,11 @@ export const Logo = styled.img`
   margin-top: 64px;
 `
 
-export const Titulo = styled.h2`
+export const Title = styled.h2`
   font-size: 36px;
   margin-bottom: 40px;
   margin-top: 140px;
+  color: ${colors.darkPink};
 
   @media (max-width: ${breakpoints.tablet}) {
     font-size: 32px;
@@ -24,6 +25,6 @@ export const Titulo = styled.h2`
   }
 `
 
-export const Cabecalho = styled.div`
+export const Header = styled.div`
   text-align: center;
 `

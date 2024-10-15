@@ -2,22 +2,28 @@ import { useParams } from 'react-router-dom'
 
 import Header from '../../components/Header'
 import BannerRestaurant from '../../components/BannerRestaurant'
-import MenuCardapio from '../../components/Menu'
+import MenuPage from '../../components/Menu'
+import Loader from '../../components/Loader'
+
 import { useGetRestaurantQuery } from '../../services/api'
 
+type RestaurantParams = {
+  id: string
+}
+
 const Menus = () => {
-  const { id } = useParams()
-  const { data: restaurant } = useGetRestaurantQuery(id!)
+  const { id } = useParams() as RestaurantParams
+  const { data: restaurant } = useGetRestaurantQuery(id)
 
   if (!restaurant) {
-    return <h3>Carregando...</h3>
+    return <Loader />
   }
 
   return (
     <>
       <Header />
       <BannerRestaurant restaurant={restaurant} />
-      <MenuCardapio menus={restaurant.cardapio} />
+      <MenuPage menus={restaurant.cardapio} />
     </>
   )
 }

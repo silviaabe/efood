@@ -1,9 +1,9 @@
 import { createGlobalStyle } from 'styled-components'
 
-export const cores = {
-  rosaEscuro: '#E66767',
-  rosaClaro: '#FFEBD9',
-  branco: '#fff'
+export const colors = {
+  darkPink: '#E66767',
+  lightPink: '#FFEBD9',
+  white: '#fff'
 }
 
 export const breakpoints = {
@@ -21,9 +21,10 @@ export const GlobalCss = createGlobalStyle`
   }
 
   body {
-    background-color: ${cores.branco};
-    color: ${cores.rosaEscuro};
+    background-color: ${colors.white};
+    color: ${colors.darkPink};
   }
+
 
   .cabecalho {
     justify-content: center;

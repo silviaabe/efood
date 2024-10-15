@@ -1,8 +1,8 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 import { ButtonContainer } from '../Button/styles'
 
-import lixeira from '../../assets/images/lixeira.png'
+import trash from '../../assets/images/lixeira.png'
 
 export const Overlay = styled.div`
   position: absolute;
@@ -30,11 +30,12 @@ export const CartContainer = styled.div`
 `
 
 export const Sidebar = styled.aside`
-  background-color: ${cores.rosaEscuro};
+  background-color: ${colors.darkPink};
   z-index: 1;
   padding: 32px 8px 0 8px;
   max-width: 360px;
   width: 100%;
+  overflow-y: auto;
 
   header {
     position: absolute;
@@ -54,13 +55,21 @@ export const Sidebar = styled.aside`
     max-width: 100%;
     width: 100%;
     border: none;
+    cursor: pointer;
+  }
+
+  .empty-text {
+    font-size: 14px;
+    line-height: 22px;
+    color: ${colors.white};
+    text-align: center;
   }
 `
 
 export const Total = styled.p`
   font-size: 14px;
   font-weight: bold;
-  color: ${cores.rosaClaro};
+  color: ${colors.lightPink};
   margin: 40px 0 16px;
   display: flex;
   justify-content: space-between;
@@ -68,7 +77,7 @@ export const Total = styled.p`
 
 export const CartItem = styled.li`
   display: flex;
-  background-color: ${cores.rosaClaro};
+  background-color: ${colors.lightPink};
   padding: 8px 8px 12px;
   margin-bottom: 16px;
   position: relative;
@@ -81,7 +90,7 @@ export const CartItem = styled.li`
   }
 
   h3 {
-    color: ${cores.rosaEscuro};
+    color: ${colors.darkPink};
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 16px;
@@ -89,12 +98,12 @@ export const CartItem = styled.li`
 
   span {
     display: block;
-    color: ${cores.rosaEscuro};
+    color: ${colors.darkPink};
     font-size: 14px;
   }
 
   button {
-    background-image: url(${lixeira});
+    background-image: url(${trash});
     width: 16px;
     height: 16px;
     border: none;
