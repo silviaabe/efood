@@ -18,7 +18,7 @@ interface ModalState extends Menu {
   isVisible: boolean
 }
 
-const Menu = ({ menus = [] }: Props) => {
+const MenuPage = ({ menus = [] }: Props) => {
   const dispatch = useDispatch()
 
   const addToCart = (menu: Menu) => {
@@ -121,4 +121,4 @@ const Menu = ({ menus = [] }: Props) => {
   )
 }
 
-export default Menu
+export default MenuPage
