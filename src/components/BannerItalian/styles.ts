@@ -1,5 +1,5 @@
 import { styled } from 'styled-components'
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 
 export const Imagem = styled.div`
   width: 100%;
@@ -9,7 +9,7 @@ export const Imagem = styled.div`
   background-position: center;
   background-size: 100%;
   font-size: 32px;
-  color: ${cores.branco};
+  color: ${colors.white};
 
   .container {
     display: flex;

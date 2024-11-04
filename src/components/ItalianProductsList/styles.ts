@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 import { ButtonLink } from '../Button/styles'
 
 export const List = styled.ul`
@@ -35,7 +35,7 @@ export const Modal = styled.div`
 
 export const ModalContent = styled.div`
   max-width: 1024px;
-  background-color: ${cores.rosaEscuro};
+  background-color: ${colors.darkPink};
   padding: 32px;
   position: relative;
   z-index: 1;
@@ -62,21 +62,21 @@ export const ModalContent = styled.div`
   }
 
   h3 {
-    color: ${cores.branco};
+    color: ${colors.white};
     font-size: 18px;
     font-weight: bold;
   }
 
   p {
-    color: ${cores.branco};
+    color: ${colors.white};
     font-size: 14px;
     line-height: 22px;
     margin: 16px 0;
   }
 
   ${ButtonLink} {
-    background-color: ${cores.rosaClaro};
-    color: ${cores.rosaEscuro};
+    background-color: ${colors.lightPink};
+    color: ${colors.darkPink};
     width: 100%;
   }
 `

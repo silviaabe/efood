@@ -1,16 +1,16 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 import { TagContainer } from '../Tag/styles'
 
 export const Card = styled.div`
-  background-color: ${cores.branco};
-  border: 1px solid ${cores.rosaEscuro};
+  background-color: ${colors.white};
+  border: 1px solid ${colors.darkPink};
   position: relative;
   margin-bottom: 48px;
 
   .linkProfile {
     text-decoration: none;
-    color: ${cores.rosaEscuro};
+    color: ${colors.darkPink};
   }
 `
 
