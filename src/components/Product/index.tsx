@@ -1,50 +1,55 @@
-import Button from '../Button'
-import {
-  Card,
-  Conjunto,
-  Descricao,
-  Estrela,
-  Informacoes,
-  Infos,
-  Tit_Conj
-} from './styles'
-import estrela from '../../assets/images/estrela.svg'
 import Tag from '../Tag'
+import Button from '../Button'
+
+import * as S from './styles'
+
+import estrela from '../../assets/images/star_favorite.png'
 
 type Props = {
-  image: string
-  infos: string[]
   title: string
-  grade: string
+  button: string
   description: string
+  infos: string[]
+  image: string
+  notas: number
+  isDestaque: boolean
+  id: number
 }
 
-const Product = ({ image, infos, title, grade, description }: Props) => (
-  <Card>
+const Product = ({
+  title,
+  button,
+  description,
+  infos,
+  image,
+  notas,
+  isDestaque,
+  id
+}: Props) => (
+  <S.Card>
     <img src={image} alt={title} />
-    <Informacoes>
+    <S.Infos>
+      {isDestaque && <Tag>Destaque da semana</Tag>}
       {infos.map((info) => (
         <Tag key={info}>{info}</Tag>
       ))}
-    </Informacoes>
-    <Infos>
-      <Tit_Conj>
-        <h3>{title}</h3>
-        <Conjunto>
-          <h3>{grade}</h3>
-          <Estrela src={estrela} />
-        </Conjunto>
-      </Tit_Conj>
-      <Descricao>{description}</Descricao>
-      <Button
-        type="link"
-        to="/profileItalian"
-        title="Clique aqui para saber mais"
-      >
-        Saiba mais
-      </Button>
-    </Infos>
-  </Card>
+    </S.Infos>
+    <S.TitleDiv>
+      <S.Title>{title}</S.Title>
+      <div className="display">
+        <S.Notes>{notas}</S.Notes>
+        <img src={estrela} alt="Estrela" />
+      </div>
+    </S.TitleDiv>
+    <S.Description>{description}</S.Description>
+    <Button
+      type="link"
+      to={`/restaurantes/${id}`}
+      title="Conheça nosso restaurante"
+    >
+      {button}
+    </Button>
+  </S.Card>
 )
 
 export default Product

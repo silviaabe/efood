@@ -1,53 +1,55 @@
 import styled from 'styled-components'
 import { colors } from '../../styles'
-import { TagContainer } from '../Tag/styles'
 
 export const Card = styled.div`
-  background-color: ${colors.white};
-  border: 1px solid ${colors.darkPink};
   position: relative;
-  margin-bottom: 48px;
+  background-color: ${colors.white2};
+  border: 1px solid ${colors.orange};
 
-  .linkProfile {
-    text-decoration: none;
-    color: ${colors.darkPink};
+  max-width: 472px;
+
+  > img {
+    width: 472px;
+    height: 217px;
+    object-fit: cover;
   }
 `
 
-export const Infos = styled.div`
-  padding: 8px;
-`
-
-export const Tit_Conj = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 16px;
-  font-size: 18px;
+export const Title = styled.h3`
   font-weight: bold;
-`
-
-export const Conjunto = styled.div`
-  display: flex;
-`
-
-export const Estrela = styled.img`
+  font-size: 18px;
+  display: block;
   margin-left: 8px;
 `
 
-export const Descricao = styled.p`
+export const Description = styled.p`
   font-size: 14px;
   line-height: 22px;
   display: block;
-  margin-bottom: 16px;
+  margin-top: 16px;
+  margin-bottom: 42px;
+  margin-left: 8px;
 `
 
-export const Informacoes = styled.div`
+export const Infos = styled.div`
   position: absolute;
   top: 16px;
-  right: 8px;
+  right: 16px;
+`
 
-  ${TagContainer} {
-    margin-right: 8px;
+export const Notes = styled.div`
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 8px;
+`
+
+export const TitleDiv = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-right: 8px;
+
+  .display {
+    display: flex;
+    }
   }
 `

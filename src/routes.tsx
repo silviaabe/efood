@@ -1,15 +1,13 @@
 import { Routes, Route } from 'react-router-dom'
 
 import Home from './pages/Home'
-import Menus from './pages/Menus'
-import Checkout from './pages/Checkout'
+import Trattoria from './pages/Trattoria'
 
-const MainRoute = () => (
+const Rotas = () => (
   <Routes>
     <Route path="/" element={<Home />} />
-    <Route path="/restaurantes/:id" element={<Menus />} />
-    <Route path="/checkout" element={<Checkout />} />
+    <Route path="/restaurantes/:id" element={<Trattoria />} />
   </Routes>
 )
 
-export default MainRoute
+export default Rotas

@@ -1,40 +1,45 @@
 import { Link } from 'react-router-dom'
 
-import logo from '../../assets/images/logo.svg'
-import instagram from '../../assets/images/instagram.svg'
-import facebook from '../../assets/images/facebook.svg'
-import twitter from '../../assets/images/twitter.svg'
-
-import { Logo } from '../Banner/styles'
 import * as S from './styles'
+
+import logo from '../../assets/images/logo.svg'
+import insta from '../../assets/images/insta.png'
+import face from '../../assets/images/face.png'
+import twit from '../../assets/images/twit.png'
 
 const Footer = () => (
   <S.Container>
-    <Link title="Clique aqui para ir para a página inicial" to="/">
-      <Logo src={logo} alt="EFOOD" />
-    </Link>
-    <S.Links>
-      <li>
-        <a title="Instagram" href="https://instagram.com">
-          <img src={instagram} alt="Instagram" />
-        </a>
-      </li>
-      <li>
-        <a title="Facebook" href="https://facebook.com">
-          <img src={facebook} alt="Facebook" />
-        </a>
-      </li>
-      <li>
-        <a title="Twitter" href="https://twitter.com">
-          <img src={twitter} alt="Twitter" />
-        </a>
-      </li>
-    </S.Links>
-    <p>
-      A efood é uma plataforma para divulgação de estabelecimentos, a
-      responsabilidade pela entrega, qualidade <br /> dos produtos é toda do
-      estabelecimento contratado.
-    </p>
+    <div className="container">
+      <S.FooterSection>
+        <Link title="Clique aqui para acessar nosso site principal" to="/">
+          <img src={logo} alt="EFOOD" />
+        </Link>
+      </S.FooterSection>
+      <S.FooterSection>
+        <Link title="Clique aqui para acessar nosso Instagram" to="/">
+          <img src={insta} alt="Instagram" />
+        </Link>
+        <Link
+          title="Clique aqui para acessar nosso Facebook"
+          to="/"
+          className="links"
+        >
+          <img src={face} alt="Facebook" />
+        </Link>
+        <Link
+          title="Clique aqui para acessar nosso Twitter"
+          to="/"
+          className="links"
+        >
+          <img src={twit} alt="Twitter" />
+        </Link>
+      </S.FooterSection>
+      <S.Description>
+        A efood é uma plataforma para divulgação de estabelecimentos, a
+        responsabilidade pela entrega, qualidade <br /> dos produtos é toda do
+        estabelecimento contratado.
+      </S.Description>
+    </div>
   </S.Container>
 )
 

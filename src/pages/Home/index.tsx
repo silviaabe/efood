@@ -1,18 +1,11 @@
-import Banner from '../../components/Banner'
-import RestaurantsList from '../../components/RestaurantsList'
+import ProductsList from '../../components/ProductsList'
+import Header from '../../components/Header'
 
-import { useGetFeaturedRestaurantQuery } from '../../services/api'
-
-const Home = () => {
-  const { data: featuredRestaurant, isLoading } =
-    useGetFeaturedRestaurantQuery()
-
-  return (
-    <>
-      <Banner />
-      <RestaurantsList isLoading={isLoading} restaurants={featuredRestaurant} />
-    </>
-  )
-}
+const Home = () => (
+  <>
+    <Header />
+    <ProductsList />
+  </>
+)
 
 export default Home

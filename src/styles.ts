@@ -1,14 +1,12 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const colors = {
-  darkPink: '#E66767',
-  lightPink: '#FFEBD9',
-  white: '#fff'
-}
-
-export const breakpoints = {
-  desktop: '1024px',
-  tablet: '767px'
+  white: '#EEE',
+  white2: '#FFF',
+  preto: '#111',
+  orange: '#e66767',
+  background: '#FFF8F2',
+  background2: '#FFEBD9'
 }
 
 export const GlobalCss = createGlobalStyle`
@@ -21,22 +19,12 @@ export const GlobalCss = createGlobalStyle`
   }
 
   body {
-    background-color: ${colors.white};
-    color: ${colors.darkPink};
-  }
-
-
-  .cabecalho {
-    justify-content: center;
+    background-color: ${colors.preto};
+    color: ${colors.orange};
   }
 
   .container {
-    max-width: 1024px;
     width: 100%;
     margin: 0 auto;
-
-    @media (max-width: ${breakpoints.desktop}) {
-      max-width: 80%;
-    }
   }
 `
